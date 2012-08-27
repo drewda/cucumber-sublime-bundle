@@ -1,0 +1,11 @@
+{
+  // Delimiters between two cells of the table
+	"table_cleaner_delimiters": ["|", "&"],
+
+  // Align the text of each cell to middle (if set to false, the text will be
+  // alligned to left)
+  "table_cleaner_align_to_middle": true,
+
+  // The number of whitespaces between the text of a cell and the delimiters
+  "table_cleaner_delimiters_white_spaces": 1
+}
