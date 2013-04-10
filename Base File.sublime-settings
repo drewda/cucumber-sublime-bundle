@@ -1,11 +1,18 @@
 {
   // Delimiters between two cells of the table
-	"table_cleaner_delimiters": ["|", "&"],
+	"table_cleaner_delimiters": ["|", "&", "\\\\"],
 
   // Align the text of each cell to middle (if set to false, the text will be
   // alligned to left)
-  "table_cleaner_align_to_middle": true,
+  "table_cleaner_align_to_middle": false,
 
   // The number of whitespaces between the text of a cell and the delimiters
-  "table_cleaner_delimiters_white_spaces": 1
+  "table_cleaner_delimiter_spaces": 1,
+
+  // The separator inserted when formatting a table imported from a website
+  "table_import_separator": "|",
+
+  // Append a separator at the beginning and the end of each line when
+  // importing a table from an external website.
+  "table_import_sorround_with_separator": true
 }

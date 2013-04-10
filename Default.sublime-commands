@@ -1,0 +1,7 @@
+[
+    { "caption": "Table Cleaner: Align Table",
+      "command": "table_cleaner"},
+
+    { "caption": "Table Cleaner: Clean Table imported from a website",
+      "command": "table_import"}
+]
