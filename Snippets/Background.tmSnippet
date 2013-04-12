@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>content</key>
+  <string>Background:
+  Given ${1:context}
+
+$0
+</string>
+  <key>name</key>
+  <string>Background</string>
+  <key>scope</key>
+  <string>text.gherkin.feature</string>
+  <key>tabTrigger</key>
+  <string>bac</string>
+  <key>uuid</key>
+  <string>1a7d3531-07f5-424d-88a3-aadb2ac86e67</string>
+</dict>
+</plist>
