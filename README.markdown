@@ -1,20 +1,8 @@
 # cucumber-sublime-bundle
 
-A bundle for [Sublime Text](http://www.sublimetext.com/) that provides syntax coloring and snippets for [Cucumber](http://cukes.info/) and its [Gherkin](https://github.com/cucumber/cucumber/wiki/Gherkin) language. Work with both ST2 and ST3.
+A bundle for [Sublime Text](http://www.sublimetext.com/) that provides syntax coloring and snippets for [Cucumber](http://cukes.info/) and its [Gherkin](https://github.com/cucumber/cucumber/wiki/Gherkin) language.
 
-## Installation: ST2
-
-### Mac OSX
-    cd ~/Library/Application\ Support/Sublime\ Text\ 2/Packages
-    git clone git://github.com/drewda/cucumber-sublime-bundle.git Cucumber
-### Linux
-    cd ~/.config/sublime-text-2/Packages
-    git clone git://github.com/drewda/cucumber-sublime-bundle.git Cucumber
-### Windows
-    cd Users/<user>/AppData/Roaming/Sublime\ Text\ 2/Packages/
-    git clone git://github.com/drewda/cucumber-sublime-bundle.git Cucumber
-
-Restart Sublime Text.
+Work with both ST2 and ST3. For ST2, see [the `master` branch](https://github.com/drewda/cucumber-sublime-bundle/tree/master).
 
 ## Installation: ST3
 
