@@ -65,8 +65,23 @@ class TableCleanerCommand(table_commons.TextCommand):
 
     # Split the lines by a separator
     def split_lines(self, lines, separator):
+
         for line in lines:
-            line[1] = line[1].split(separator)
+
+            # if there is no escaped separator, just use normal version
+            if "\\" + separator not in line[1]:
+                line[1] = line[1].split(separator)
+
+            # if there is escaped separator in table (eg: \&)
+            else:
+                temp_line = []
+                last_i = 0
+                for i in xrange(len(line[1])):
+                    if line[1][i] == separator and line[1][i-1] != "\\":
+                        temp_line.append(line[1][last_i:i])
+                        last_i = i+1
+                temp_line.append(line[1][last_i:])
+                line[1] = temp_line
 
         return lines
 
