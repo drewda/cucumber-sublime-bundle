@@ -1,20 +1,34 @@
-# cucumber-sublime2-bundle
+# cucumber-sublime-bundle
 
-A bundle for [Sublime Text 2](http://www.sublimetext.com/2) that provides syntax coloring and snippets for [Cucumber](http://cukes.info/) and its [Gherkin](https://github.com/cucumber/cucumber/wiki/Gherkin) language.
+A bundle for [Sublime Text](http://www.sublimetext.com/) that provides syntax coloring and snippets for [Cucumber](http://cukes.info/) and its [Gherkin](https://github.com/cucumber/cucumber/wiki/Gherkin) language. Work with both ST2 and ST3.
 
-## Installation
+## Installation: ST2
 
 ### Mac OSX
     cd ~/Library/Application\ Support/Sublime\ Text\ 2/Packages
-    git clone git://github.com/drewda/cucumber-sublime2-bundle.git Cucumber
+    git clone git://github.com/drewda/cucumber-sublime-bundle.git Cucumber
 ### Linux
     cd ~/.config/sublime-text-2/Packages
-    git clone git://github.com/drewda/cucumber-sublime2-bundle.git Cucumber
+    git clone git://github.com/drewda/cucumber-sublime-bundle.git Cucumber
 ### Windows
     cd Users/<user>/AppData/Roaming/Sublime\ Text\ 2/Packages/
-    git clone git://github.com/drewda/cucumber-sublime2-bundle.git Cucumber
+    git clone git://github.com/drewda/cucumber-sublime-bundle.git Cucumber
 
-Restart Sublime Text 2
+Restart Sublime Text.
+
+## Installation: ST3
+
+### Mac OSX
+    cd ~/Library/Application\ Support/Sublime\ Text\ 3/Installed Packages
+    git clone -b st3 git://github.com/drewda/cucumber-sublime-bundle.git Cucumber
+### Linux
+    cd ~/.config/sublime-text-3/Installed Packages
+    git clone -b st3 git://github.com/drewda/cucumber-sublime-bundle.git Cucumber
+### Windows
+    cd Users/<user>/AppData/Roaming/Sublime\ Text\ 3/Installed Packages/
+    git clone -b st3 git://github.com/drewda/cucumber-sublime-bundle.git Cucumber
+
+Restart Sublime Text.
 
 ## Table Cleaner
 
@@ -40,6 +54,9 @@ These settings can be found in Base File.sublime-settings
 ## Credits
 Created by the Github user @sagework, who pulled his/her repo from https://github.com/sagework/cucumber-sublime2-bundle
 
-The Table Cleaner plug-in has been kindly contributed by [@mishu91](https://github.com/mishu91). If you'd like just the plug-in, without the rest of this Cucumber bundle, see his repository at https://github.com/mishu91/Sublime-Text-2-Table-Cleaner
+The Table Cleaner plug-in has been kindly contributed by [@amisarca](https://github.com/amisarca). If you'd like just the plug-in, without the rest of this Cucumber bundle, see his repositories:
 
-I host this project at https://github.com/drewda/cucumber-sublime2-bundle for those who use Sublime Package Control.
+* ST2: https://github.com/amisarca/Sublime-Text-2-Table-Cleaner
+* ST3: https://github.com/amisarca/Sublime-Text-Table-Cleaner
+
+I host this project at https://github.com/drewda/cucumber-sublime-bundle for those who use Sublime Package Control.
