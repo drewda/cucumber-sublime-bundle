@@ -7,7 +7,7 @@ Work with both ST2 and ST3. For ST2, see [the `master` branch](https://github.co
 ## Installation: ST3
 
 ### Mac OSX
-    cd ~/Library/Application\ Support/Sublime\ Text\ 3/Installed Packages
+    cd ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages
     git clone -b st3 git://github.com/drewda/cucumber-sublime-bundle.git Cucumber
 ### Linux
     cd ~/.config/sublime-text-3/Installed Packages
