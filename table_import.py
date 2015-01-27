@@ -1,5 +1,12 @@
 # Author: Andrei Misarca
 
+import os.path
+import sys
+
+this_dir = os.path.dirname(os.path.realpath(__file__))
+if this_dir not in sys.path:
+    sys.path += [this_dir]
+
 import table_commons
 
 
