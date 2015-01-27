@@ -6,6 +6,8 @@ Work with both ST2 and ST3. For ST3, see [the `st3` branch](https://github.com/d
 
 ## Installation: ST2
 
+### Automatic - via Package Control
+    Search for cucumber sublime bundle
 ### Mac OSX
     cd ~/Library/Application\ Support/Sublime\ Text\ 2/Packages
     git clone git://github.com/drewda/cucumber-sublime-bundle.git Cucumber
