@@ -6,13 +6,15 @@ Work with both ST2 and ST3. For ST2, see [the `master` branch](https://github.co
 
 ## Installation: ST3
 
-### Mac OSX
+### Automatic - via Package Control
+    Search for cucumber sublime bundle
+### From source - Mac OSX
     cd ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages
     git clone -b st3 git://github.com/drewda/cucumber-sublime-bundle.git Cucumber
-### Linux
+### From source - Linux
     cd ~/.config/sublime-text-3/Installed Packages
     git clone -b st3 git://github.com/drewda/cucumber-sublime-bundle.git Cucumber
-### Windows
+### From source - Windows
     cd Users/<user>/AppData/Roaming/Sublime\ Text\ 3/Installed Packages/
     git clone -b st3 git://github.com/drewda/cucumber-sublime-bundle.git Cucumber
 
@@ -39,12 +41,28 @@ These settings can be found in Base File.sublime-settings
 - **table_cleaner_align_to_middle** - Align the text of each cell to middle (if set to false, the text will be alligned to left) - default: **false**
 - **table_cleaner_delimiters_white_spaces** - The number of whitespaces between the text of a cell and the delimiters - default: **1**
 
+## Gherkin Auto-complete
+
+Shows all existing gherkin phrases within features in folder hierarchy.
+
+![Gherkin autocompletion](https://dl.dropboxusercontent.com/u/4031118/sublime-gherkin-autocomplete/sublime-gherkin-autocomplete.png)
+
+*sublime-gherkin-auto-complete and cucumber-sublime-bundle plugins are mutually exclusive, so if you have
+sublime-gherkin-auto-complete installed and want to install cucumber-sublime-bundle you have to uninstall
+sublime-gherkin-auto-complete first.*
+
 ## Credits
 Created by the Github user @sagework, who pulled his/her repo from https://github.com/sagework/cucumber-sublime2-bundle
 
-The Table Cleaner plug-in has been kindly contributed by [@amisarca](https://github.com/amisarca). If you'd like just the plug-in, without the rest of this Cucumber bundle, see his repositories:
+The Table Cleaner plug-in has been kindly contributed by [@amisarca](https://github.com/amisarca).
+If you'd like just the plug-in, without the rest of this Cucumber bundle, see his repositories:
 
 * ST2: https://github.com/amisarca/Sublime-Text-2-Table-Cleaner
 * ST3: https://github.com/amisarca/Sublime-Text-Table-Cleaner
+
+The Gherkin auto-complete plug-in has been kindly contributed by [@AndyHitchman](https://github.com/AndyHitchman/).
+If you'd like just the plug-in, without the rest of this Cucumber bundle, see his
+[repository](https://github.com/AndyHitchman/sublime-gherkin-auto-complete).
+
 
 I host this project at https://github.com/drewda/cucumber-sublime-bundle for those who use Sublime Package Control.
