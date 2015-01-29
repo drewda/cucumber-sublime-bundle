@@ -1,4 +1,4 @@
 [
-  { "keys": ["alt+;"], "command": "table_cleaner" },
-  { "keys": ["alt+shift+;"], "command": "table_import" }
+  { "keys": ["alt+;"], "command": "table_cleaner", "context": [{"key": "selector", "operator": "equal", "operand": "source.ruby.rspec.cucumber.steps,text.gherkin.feature"}] },
+  { "keys": ["alt+shift+;"], "command": "table_import", "context": [{"key": "selector", "operator": "equal", "operand": "source.ruby.rspec.cucumber.steps,text.gherkin.feature"}] }
 ]
