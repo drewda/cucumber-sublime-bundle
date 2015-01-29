@@ -68,7 +68,7 @@ class GherkinPhrases:
         return autocomplete_list
 
     def is_feature_file(self, filename):
-        return '.feature' in filename
+        return '.feature' in filename if filename else False
 
 
 class GherkinAutoComplete(GherkinPhrases, sublime_plugin.EventListener):
