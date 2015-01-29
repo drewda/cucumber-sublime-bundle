@@ -137,7 +137,7 @@ class GherkinAutoComplete(GherkinPhrases, sublime_plugin.EventListener):
             completions = self.get_autocomplete_list(
                 prefix or search, predicate=predicate)
 
-        return (completions, sublime.INHIBIT_EXPLICIT_COMPLETIONS | sublime.INHIBIT_WORD_COMPLETIONS)
+            return (completions, sublime.INHIBIT_EXPLICIT_COMPLETIONS | sublime.INHIBIT_WORD_COMPLETIONS)
 
     def index_file(self, file_name):
         print('Indexing gherkin phrases in ' + file_name)
