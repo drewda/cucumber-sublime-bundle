@@ -60,8 +60,10 @@ class GherkinPhrases:
                 and (predicate == phrase.predicate if predicate else True)
                 and phrase.phrase not in phrases
             ):
-                autocomplete_list.append((
-                    phrase.phrase + '\t' + phrase.predicate + ' in ' + phrase.feature_name, phrase.phrase))
+                autocomplete_list.append(('{phrase.phrase} \t [{phrase.predicate} in {path}]'.format(
+                    phrase=phrase,
+                    path=os.path.basename(phrase.feature_name)
+                ), phrase.phrase))
                 phrases.add(phrase.phrase)
         return autocomplete_list
 
@@ -75,10 +77,22 @@ class GherkinAutoComplete(GherkinPhrases, sublime_plugin.EventListener):
 
     all_indexed = False
 
+    def get_feature_folders(self, base_path, open_folders):
+        if base_path:
+            if not os.path.isdir(base_path):
+                base_path = os.path.dirname(base_path)
+
+            def find_feature():
+                return any(file for file in os.listdir(base_path) if os.path.splitext(file)[1] == '.feature')
+            while find_feature():
+                base_path = os.path.dirname(base_path)
+                if base_path.endswith('features'):
+                    yield base_path
+
     def on_activated_async(self, view):
         if not self.all_indexed:
             self.all_indexed = True
-            self.index_all_features(view.window().folders())
+            self.index_all_features(view)
 
     def on_post_save_async(self, view):
         if self.is_feature_file(view.file_name()):
@@ -87,18 +101,19 @@ class GherkinAutoComplete(GherkinPhrases, sublime_plugin.EventListener):
                 self.index_file(view.file_name())
             else:
                 self.all_indexed = True
-                self.index_all_features(view.window().folders())
+                self.index_all_features(view)
 
-    def index_all_features(self, open_folders):
+    def index_all_features(self, view):
         self.clearPhrases()
-
-        for folder in open_folders:
+        for folder in self.get_feature_folders(view.file_name(), view.window().folders()):
             feature_files = self.get_feature_files(folder)
             for file_name in feature_files:
                 self.index_file(file_name)
+        print('Indexing gherkin phrases done')
 
     def on_query_completions(self, view, prefix, locations):
         completions = []
+        search = None
 
         if self.is_feature_file(view.file_name()):
             predicate = None
@@ -107,6 +122,8 @@ class GherkinAutoComplete(GherkinPhrases, sublime_plugin.EventListener):
                     match = None
                     while not match or sel.b > -1:
                         line = view.substr(view.line(sel.b)).strip()
+                        if search is None:
+                            search = line
                         match = re.match(r'^(given|when|then)', line, re.IGNORECASE)
                         if match:
                             predicate = match.group(0).lower()
@@ -115,8 +132,10 @@ class GherkinAutoComplete(GherkinPhrases, sublime_plugin.EventListener):
                             row, col = view.rowcol(sel.b)
                             sel.b = view.text_point(row - 1, col)
                     break
+            search = re.sub(r'^(given|when|then|and)\s?', '', search, flags=re.IGNORECASE)
+            print('Searching for', (prefix or search, predicate))
             completions = self.get_autocomplete_list(
-                prefix, predicate=predicate)
+                prefix or search, predicate=predicate)
 
         return (completions, sublime.INHIBIT_EXPLICIT_COMPLETIONS | sublime.INHIBIT_WORD_COMPLETIONS)
 
@@ -164,15 +183,15 @@ class GherkinAutoComplete(GherkinPhrases, sublime_plugin.EventListener):
                 activePredicate = None
 
     def get_feature_files(self, dir_name, *args):
-        fileList = []
+        fileList = set()
 
         for file in os.listdir(dir_name):
             dirfile = os.path.join(dir_name, file)
             if os.path.isfile(dirfile):
                 fileName, fileExtension = os.path.splitext(dirfile)
                 if fileExtension == '.feature':
-                    fileList.append(dirfile)
+                    fileList.add(dirfile)
             elif os.path.isdir(dirfile):
-                fileList += self.get_feature_files(dirfile, *args)
+                fileList.update(self.get_feature_files(dirfile, *args))
 
         return fileList
