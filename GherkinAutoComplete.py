@@ -152,6 +152,7 @@ class GherkinAutoComplete(GherkinPhrases, sublime_plugin.EventListener):
         phrase = None
 
         for line in lines:
+            line = line.strip()
             match = re.match(r'^\s*feature:\s*(.*)$', line, re.IGNORECASE)
             if match is not None:
                 feature_name = match.group(1)
