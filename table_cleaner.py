@@ -14,7 +14,7 @@ from . import table_commons
 class TableCleanerCommand(table_commons.TextCommand):
     # Default separator, all the recognised separators being replaced with this
     # one, before aligning the tables, acting as an intermediate.
-    SEPARATOR = "&"
+    SEPARATOR = "|"
 
     def run(self, edit):
         self.edit = edit
@@ -63,7 +63,7 @@ class TableCleanerCommand(table_commons.TextCommand):
     # instance variables
     def get_settings(self):
         self.separators = (self.view.settings()
-                               .get('table_cleaner_delimiters', ['|', '&']))
+                               .get('table_cleaner_delimiters', ['|', '\\\\']))
         self.align_to_middle = (self.view.settings()
                                     .get('table_cleaner_align_to_middle',
                                          False))
