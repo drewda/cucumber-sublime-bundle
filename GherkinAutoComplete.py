@@ -117,17 +117,18 @@ class GherkinAutoComplete(GherkinPhrases, sublime_plugin.EventListener):
 
         if self.is_feature_file(view.file_name()):
             predicate = None
+            search = None
             for sel in view.sel():
                 if sel.empty():
                     match = None
-                    while not match or sel.b > -1:
+                    while not match and sel.b > 0:
                         line = view.substr(view.line(sel.b)).strip()
                         if search is None:
                             search = line
+                            break
                         match = re.match(r'^(given|when|then)', line, re.IGNORECASE)
                         if match:
                             predicate = match.group(0).lower()
-                            break
                         else:
                             row, col = view.rowcol(sel.b)
                             sel.b = view.text_point(row - 1, col)
