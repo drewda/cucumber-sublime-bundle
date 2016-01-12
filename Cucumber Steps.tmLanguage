@@ -7,7 +7,7 @@
 		<string>steps.rb</string>
 	</array>
   <key>foldingStartMarker</key>
-  <string>^\s*\b(Given|When|Then|And|def)</string>
+  <string>^\s*\b(Given|Etantdonné|When|Quand|Then|Alors|And|def)</string>
   <key>foldingStopMarker</key>
   <string>^\s*(end)$</string>
 	<key>keyEquivalent</key>
@@ -18,13 +18,13 @@
 	<array>
 		<dict>
 			<key>match</key>
-			<string>\b(GivenScenario|Given|When|Then|And)\b</string>
+			<string>\b(GivenScenario|Given|Etantdonné|When|Quand|Then|Alors|And)\b</string>
 			<key>name</key>
 			<string>keyword.other.step.cucumber</string>
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>\b(?&lt;=GivenScenario|Given|When|Then|And) (")</string>
+			<string>\b(?&lt;=GivenScenario|Given|Etantdonné|When|Quand|Then|Alors|And) (")</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -58,7 +58,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>\b(?&lt;=GivenScenario|Given|When|Then|And) (')</string>
+			<string>\b(?&lt;=GivenScenario|Given|Etantdonné|When|Quand|Then|Alors|And) (')</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -92,7 +92,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>\b(?&lt;=GivenScenario|Given|When|Then|And) (/)</string>
+			<string>\b(?&lt;=GivenScenario|Given|Etantdonné|When|Quand|Then|Alors|And) (/)</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -122,7 +122,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>\b(?&lt;=GivenScenario|Given|When|Then|And) (%r{)</string>
+			<string>\b(?&lt;=GivenScenario|Given|Etantdonné|When|Quand|Then|Alors|And) (%r{)</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
