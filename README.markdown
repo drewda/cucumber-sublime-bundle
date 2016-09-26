@@ -51,6 +51,10 @@ Shows all existing gherkin phrases within features in folder hierarchy.
 sublime-gherkin-auto-complete installed and want to install cucumber-sublime-bundle you have to uninstall
 sublime-gherkin-auto-complete first.*
 
+## Gherkin Syntax Highlighting
+
+Do this to activate :  open a .feature file and do "view -> syntax -> open all with current extension as -> Cucumber -> Gherkin"
+
 ## Credits
 Created by the Github user @sagework, who pulled his/her repo from https://github.com/sagework/cucumber-sublime2-bundle
 
